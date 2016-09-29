@@ -37,7 +37,6 @@ public class SupportComputeBolt extends BaseRichBolt {
 	 * differtiate the tuples comes from PairTotalCountBolt, PairCountBolt, or CommandSpout
 	 * @param tuple [description]
 	 */
-	@Override
 	public void execute(Tuple tuple) {
 		// comes from PairTotalCountBolt
 		if ( tuple.getFields().get(0).equals(FieldNames.TOTAL_COUNT) ) {

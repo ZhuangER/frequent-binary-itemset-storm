@@ -31,7 +31,6 @@ public class PairCountBolt extends BaseRichBolt {
 		pairCounts = new HashMap<>();
 	}
 
-	@Override
 	public void execute(Tuple tuple) {
 		String item1 = tuple.getStringByField(FieldNames.ITEM1);
 		String item2 = tuple.getStringByField(FieldNames.ITEM2);

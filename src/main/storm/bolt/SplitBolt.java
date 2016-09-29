@@ -29,7 +29,6 @@ public class SplitBolt extends BaseRichBolt {
 		orderItems = new HashMap<>();
 	}
 
-	@Override
 	public void execute(Tuple tuple) {
 		String id = tuple.getStringByField(FieldNames.ID);
 		String newItem = tuple.getStringByField(FieldNames.NAME);

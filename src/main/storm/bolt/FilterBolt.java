@@ -14,6 +14,8 @@ import redis.clients.jedis.Jedis;
 
 import org.json.simple.JSONObject;
 
+import org.apache.log4j.Logger;
+
 import storm.config.ConfKeys;
 import storm.config.FieldNames;
 import storm.tools.ItemPair;
@@ -33,9 +35,7 @@ public class FilterBolt extends BaseRichBolt {
 	private int port;
 	
 	@Override
-	public void prepare(Map conf, 
-			TopologyContext topologyContext, 
-			OutputCollector outputCollector) {
+	public void prepare(Map conf, TopologyContext topologyContext, OutputCollector outputCollector) {
 		this.collector = outputCollector;
 		host = conf.get(ConfKeys.REDIS_HOST).toString();
 		port = Integer.valueOf(
@@ -47,8 +47,7 @@ public class FilterBolt extends BaseRichBolt {
 		jedis = new Jedis(host, port);
 		jedis.connect();
 	}
-	
-	@Override
+
 	public void execute(Tuple tuple) {
 		String item1 = tuple.getStringByField(FieldNames.ITEM1);
 		String item2 = tuple.getStringByField(FieldNames.ITEM2);

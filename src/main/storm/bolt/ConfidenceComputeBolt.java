@@ -25,7 +25,7 @@ import storm.tools.ItemPair;
 public class ConfidenceComputeBolt extends BaseRichBolt {
 	private static final long serialVersionUID = -8776034202913455949L;
 
-	public static Logger LOG = Logger.getLogger(OrderSpout.class);
+	public static Logger LOG = Logger.getLogger(ConfidenceComputeBolt.class);
 
 	private OutputCollector collector;
 	private Jedis jedis;
@@ -55,7 +55,6 @@ public class ConfidenceComputeBolt extends BaseRichBolt {
 		}
 	}
 
-	@Override
 	public void execute(Tuple tuple) {
 		// comes from PairCount
 		if ( tuple.getFields().size() == 3 ) {

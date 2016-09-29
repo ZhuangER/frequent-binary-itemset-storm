@@ -1,6 +1,6 @@
 package storm.config;
 
 public class ConfKeys {
-	public static final String REDIS_HOST = "redis_host_key";
-	public static final String REDIS_PORT = "redis_port_key";
+	public static final String REDIS_HOST = "localhost";
+	public static final String REDIS_PORT = "6379";
 }
